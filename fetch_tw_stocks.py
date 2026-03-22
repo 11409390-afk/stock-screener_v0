@@ -47,13 +47,10 @@ if __name__ == "__main__":
     symbols = fetch_data()
     
     if len(symbols) > 1000:
-        # Ensure output directory exists
-        os.makedirs("public", exist_ok=True)
-        
         # Save to JSON
-        with open("public/tw_stocks.json", "w", encoding="utf-8") as f:
+        with open("tw_stocks.json", "w", encoding="utf-8") as f:
             json.dump(symbols, f, ensure_ascii=False, separators=(',', ':'))
-        print(f"Successfully saved {len(symbols)} symbols to public/tw_stocks.json")
+        print(f"Successfully saved {len(symbols)} symbols to tw_stocks.json")
     else:
         print("Error: Not enough data retrieved. Aborting save.")
         exit(1)
