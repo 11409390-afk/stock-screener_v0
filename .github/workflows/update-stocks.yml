@@ -5,6 +5,9 @@ on:
     - cron: '0 10 * * *' # Runs at 10:00 UTC (18:00 Taiwan time) daily
   workflow_dispatch: # Allows you to run it manually from the Actions tab
 
+permissions:
+  contents: write
+
 jobs:
   fetch-and-commit:
     runs-on: ubuntu-latest
